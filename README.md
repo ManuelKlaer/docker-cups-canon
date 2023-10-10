@@ -7,7 +7,7 @@ _Forked from: https://gitlab.com/ydkn/docker-cups_
 ### Start the container
 
 ```bash
-docker run -d --restart always -p 631:631 -v $(pwd):/etc/cups ydkn/cups:latest
+docker run -d --restart always -p 631:631 -v $(pwd):/etc/cups manuelklaer/cups-canon:latest
 ```
 
 ### Configuration
@@ -18,5 +18,5 @@ Default credentials: admin / admin
 To change the admin password set the environment variable _ADMIN_PASSWORD_ to your password.
 
 ```bash
-docker run -d --restart always -p 631:631 -v $(pwd):/etc/cups -e ADMIN_PASSWORD=mySecretPassword ydkn/cups:latest
+docker run -d --restart always -p 631:631 -v $(pwd):/etc/cups -e ADMIN_PASSWORD=mySecretPassword manuelklaer/cups-canon:latest
 ```
