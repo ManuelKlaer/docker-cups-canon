@@ -1,5 +1,7 @@
 # CUPS printing server with Canon drivers
 
+Docker Hub: https://hub.docker.com/r/manuelklaer/cups-canon
+
 _Forked from: https://gitlab.com/ydkn/docker-cups_
 
 ## Usage
