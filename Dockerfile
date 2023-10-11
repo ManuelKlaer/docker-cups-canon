@@ -24,18 +24,18 @@ RUN apt-get update \
   sudo \
   whois \
   usbutils \
+  smbclient \
   cups \
   cups-client \
   cups-bsd \
   cups-filters \
   foomatic-db-compressed-ppds \
   printer-driver-all \
+  printer-driver-cups-pdf \
   openprinting-ppds \
   hpijs-ppds \
   hp-ppd \
-  hplip \
-  smbclient \
-  printer-driver-cups-pdf
+  hplip
 
 # add and install cnijfilter package
 ADD cnijfilter2/cnijfilter2_6.60-1_amd64.deb /tmp/cnijfilter2.deb
