@@ -22,7 +22,10 @@ LABEL \
 RUN apt-get update \
   && apt-get install -y \
   sudo \
+  whois \
+  usbutils \
   cups \
+  cups-client \
   cups-bsd \
   cups-filters \
   foomatic-db-compressed-ppds \
@@ -30,7 +33,9 @@ RUN apt-get update \
   openprinting-ppds \
   hpijs-ppds \
   hp-ppd \
-  hplip
+  hplip \
+  smbclient \
+  printer-driver-cups-pdf
 
 # add and install cnijfilter package
 ADD cnijfilter2/cnijfilter2_6.60-1_amd64.deb /tmp/cnijfilter2.deb
