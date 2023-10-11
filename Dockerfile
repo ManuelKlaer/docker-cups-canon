@@ -32,7 +32,7 @@ RUN apt-get update \
   hplip
 
 # add cnijfilter package
-ADD cnijfilter2_5.50-1_amd64.deb /tmp/cnijfilter2.deb
+ADD cnijfilter2/cnijfilter2_6.60-1_amd64.deb /tmp/cnijfilter2.deb
 
 # install cnijfilter2
 RUN apt-get install -y /tmp/cnijfilter2.deb
