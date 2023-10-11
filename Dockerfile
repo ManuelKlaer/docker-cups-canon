@@ -1,5 +1,5 @@
 # base image
-FROM amd64/debian:buster-slim
+FROM amd64/debian:stable-slim
 
 # args
 ARG BUILD_DATE
@@ -8,7 +8,8 @@ ARG BUILD_DATE
 ENV ADMIN_PASSWORD=admin
 
 # labels
-LABEL maintainer="ManuelKlaer" \
+LABEL \
+  maintainer="ManuelKlaer" \
   org.label-schema.schema-version="1.0" \
   org.label-schema.name="manuelklaer/cups-canon" \
   org.label-schema.description="CUPS printing server with Canon drivers (cnijfilter2)" \
@@ -31,11 +32,13 @@ RUN apt-get update \
   hp-ppd \
   hplip
 
-# add cnijfilter package
+# add and install cnijfilter package
 ADD cnijfilter2/cnijfilter2_6.60-1_amd64.deb /tmp/cnijfilter2.deb
-
-# install cnijfilter2
 RUN apt-get install -y /tmp/cnijfilter2.deb
+
+# upgrade all packages
+RUN apt-get update \
+  && apt-get upgrade -y
 
 # cleanup
 RUN apt-get clean \
