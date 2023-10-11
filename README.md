@@ -2,6 +2,21 @@
 
 Docker Hub: https://hub.docker.com/r/manuelklaer/cups-canon
 
+## Architectures
+- linux/amd64
+- linux/arm64
+- linux/i386
+- linux/mips64el
+
+## Included packages:
+- cups, cups-client, cups-bsd, cups-filters
+- foomatic-db
+- printer-driver-all, printer-driver-cups-pdf
+- openprinting-ppds
+- hpijs-ppds, hp-ppd, hplip
+- cnijfilter2
+- sudo, whois, usbutlis, smbclient
+
 ## Usage
 ### Start the container
 
@@ -19,15 +34,6 @@ To change the admin password set the environment variable _ADMIN_PASSWORD_ to yo
 ```bash
 docker run -d --restart always -p 631:631 -v $(pwd):/etc/cups -e ADMIN_PASSWORD=mySecretPassword manuelklaer/cups-canon:latest
 ```
-
-## Included packages:
-- cups, cups-client, cups-bsd, cups-filters
-- foomatic-db
-- printer-driver-all, printer-driver-cups-pdf
-- openprinting-ppds
-- hpijs-ppds, hp-ppd, hplip
-- cnijfilter2
-- sudo, whois, usbutlis, smbclient
 
 ---
 
