@@ -32,10 +32,12 @@ RUN apt-get install -y /tmp/cnijfilter2.deb
 
 # upgrade all packages
 RUN apt-get update \
-  && apt-get upgrade -y
+  && apt-get upgrade -y \
+  && apt-get full-upgrade -y
 
 # cleanup
-RUN apt-get clean \
+RUN apt-get autoremove -y \
+  && apt-get clean \
   && rm -rf /var/lib/apt/lists/* \
   && rm -f /tmp/cnijfilter2.deb
 
