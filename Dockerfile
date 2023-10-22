@@ -27,7 +27,7 @@ RUN apt-get install -y printer-driver-all printer-driver-cups-pdf
 RUN apt-get install -y openprinting-ppds hpijs-ppds hp-ppd hplip
 
 # add and install cnijfilter2 package
-ADD cnijfilter2/cnijfilter2_6.60-1_${TARGETARCH}.deb /tmp/cnijfilter2.deb
+ADD ./cnijfilter2/cnijfilter2_6.60-1_${TARGETARCH}.deb /tmp/cnijfilter2.deb
 RUN apt-get install -y /tmp/cnijfilter2.deb
 
 # upgrade all packages
@@ -61,8 +61,8 @@ RUN /usr/sbin/cupsd \
 RUN cp -rp /etc/cups /etc/cups-skel
 
 # entrypoint
-ADD docker-entrypoint.sh /usr/local/bin/docker-entrypoint.sh
-ENTRYPOINT [ "docker-entrypoint.sh" ]
+ADD ./docker-entrypoint.sh /usr/local/bin/docker-entrypoint.sh
+ENTRYPOINT [ "/usr/local/bin/docker-entrypoint.sh" ]
 
 # default command
 CMD ["cupsd", "-f"]
