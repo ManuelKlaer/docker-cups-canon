@@ -14,7 +14,7 @@ Docker Hub: https://hub.docker.com/r/manuelklaer/cups-canon
 - printer-driver-all, printer-driver-cups-pdf
 - openprinting-ppds
 - hpijs-ppds, hp-ppd, hplip
-- cnijfilter2 6.70-1
+- [cnijfilter2 6.70-1](https://asia.canon/en/support/0101213513)
 - sudo, whois, usbutlis, smbclient
 
 ## Usage
