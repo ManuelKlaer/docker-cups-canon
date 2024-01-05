@@ -14,14 +14,14 @@ Docker Hub: https://hub.docker.com/r/manuelklaer/cups-canon
 - printer-driver-all, printer-driver-cups-pdf
 - openprinting-ppds
 - hpijs-ppds, hp-ppd, hplip
-- cnijfilter2
+- cnijfilter2 6.70-1
 - sudo, whois, usbutlis, smbclient
 
 ## Usage
 ### Start the container
 
 ```bash
-docker run -d --restart always -p 631:631 -v $(pwd):/etc/cups manuelklaer/cups-canon:latest
+docker run -d --restart always -p 631:631 -v ./cups:/etc/cups manuelklaer/cups-canon:latest
 ```
 
 ### Configuration
@@ -32,7 +32,7 @@ Default credentials: admin / admin
 To change the admin password set the environment variable _ADMIN_PASSWORD_ to your password.
 
 ```bash
-docker run -d --restart always -p 631:631 -v $(pwd):/etc/cups -e ADMIN_PASSWORD=mySecretPassword manuelklaer/cups-canon:latest
+docker run -d --restart always -p 631:631 -v ./cups:/etc/cups -e ADMIN_PASSWORD=mySecretPassword manuelklaer/cups-canon:latest
 ```
 
 ---

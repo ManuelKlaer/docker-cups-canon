@@ -27,7 +27,7 @@ RUN apt-get install -y printer-driver-all printer-driver-cups-pdf
 RUN apt-get install -y openprinting-ppds hpijs-ppds hp-ppd hplip
 
 # add and install cnijfilter2 package
-ADD ./cnijfilter2/cnijfilter2_6.60-1_${TARGETARCH}.deb /tmp/cnijfilter2.deb
+ADD ./cnijfilter2/cnijfilter2_6.70-1_${TARGETARCH}.deb /tmp/cnijfilter2.deb
 RUN apt-get install -y /tmp/cnijfilter2.deb
 
 # upgrade all packages
