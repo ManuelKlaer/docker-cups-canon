@@ -1,5 +1,5 @@
 # base image
-FROM --platform=$TARGETPLATFORM debian:stable-slim
+FROM --platform=$TARGETPLATFORM debian:unstable-slim
 
 # args
 ARG TARGETPLATFORM
