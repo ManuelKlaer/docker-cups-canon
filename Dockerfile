@@ -1,5 +1,5 @@
 # base image
-FROM --platform=$TARGETPLATFORM debian:unstable-slim
+FROM debian:unstable-slim
 
 # args
 ARG TARGETPLATFORM
@@ -19,25 +19,25 @@ LABEL \
   org.label-schema.vcs-url="https://github.com/ManuelKlaer/docker-cups-canon"
 
 # install cups server and drivers
-RUN apt-get update
-RUN apt-get install -y sudo whois usbutils smbclient
-RUN apt-get install -y cups cups-client cups-bsd cups-filters
-RUN apt-get install -y foomatic-db-compressed-ppds
-RUN apt-get install -y printer-driver-all printer-driver-cups-pdf
-RUN apt-get install -y openprinting-ppds hpijs-ppds hp-ppd hplip
+RUN apt update
+RUN apt install -y sudo whois usbutils smbclient
+RUN apt install -y cups cups-client cups-bsd cups-filters
+RUN apt install -y foomatic-db-compressed-ppds
+RUN apt install -y printer-driver-all printer-driver-cups-pdf
+RUN apt install -y openprinting-ppds hpijs-ppds hp-ppd hplip
 
 # add and install cnijfilter2 package
 ADD ./cnijfilter2/cnijfilter2_6.70-1_${TARGETARCH}.deb /tmp/cnijfilter2.deb
 RUN apt-get install -y /tmp/cnijfilter2.deb
 
 # upgrade all packages
-RUN apt-get update \
-  && apt-get upgrade -y \
-  && apt-get full-upgrade -y
+RUN apt update \
+  && apt upgrade -y \
+  && apt full-upgrade -y
 
 # cleanup
-RUN apt-get autoremove -y \
-  && apt-get clean \
+RUN apt autoremove -y \
+  && apt clean \
   && rm -rf /var/lib/apt/lists/* \
   && rm -f /tmp/cnijfilter2.deb
 
