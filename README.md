@@ -9,13 +9,13 @@ Docker Hub: https://hub.docker.com/r/manuelklaer/cups-canon
 - linux/mips64el
 
 ## Included packages:
-- cups, cups-client, cups-bsd, cups-filters
-- foomatic-db
+- cups, cups-client, cups-bsd, cups-filters, cups-browsed
+- foomatic-db-engine, foomatic-db-compressed-ppds
 - printer-driver-all, printer-driver-cups-pdf
 - openprinting-ppds
 - hpijs-ppds, hp-ppd, hplip
-- [cnijfilter2 6.70-1](https://asia.canon/en/support/0101213513)
-- sudo, whois, usbutlis, smbclient
+- [cnijfilter2 6.80-1](https://canoncanada.custhelp.com/app/answers/answer_view/a_id/1048834/~/ij-printer-driver-ver.-6.80-for-linux-%28debian-packagearchive%29)
+- sudo, whois, usbutlis, smbclient, avahi-utils
 
 ## Usage
 ### Start the container

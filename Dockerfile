@@ -20,14 +20,15 @@ LABEL \
 
 # install cups server and drivers
 RUN apt update
-RUN apt install -y sudo whois usbutils smbclient
-RUN apt install -y cups cups-client cups-bsd cups-filters
-RUN apt install -y foomatic-db-compressed-ppds
+RUN apt install -y sudo whois usbutils smbclient avahi-utils
+RUN apt install -y cups cups-client cups-bsd cups-filters cups-browsed
+RUN apt install -y foomatic-db-engine foomatic-db-compressed-ppds
+RUN apt install -y openprinting-ppds
 RUN apt install -y printer-driver-all printer-driver-cups-pdf
-RUN apt install -y openprinting-ppds hpijs-ppds hp-ppd hplip
+RUN apt install -y hpijs-ppds hp-ppd hplip
 
 # add and install cnijfilter2 package
-ADD ./cnijfilter2/cnijfilter2_6.70-1_${TARGETARCH}.deb /tmp/cnijfilter2.deb
+ADD ./cnijfilter2/cnijfilter2_6.80-1_${TARGETARCH}.deb /tmp/cnijfilter2.deb
 RUN apt-get install -y /tmp/cnijfilter2.deb
 
 # upgrade all packages
